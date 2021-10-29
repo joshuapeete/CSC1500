@@ -1,0 +1,59 @@
+#Number 1
+firstname=input("Enter first name in lowercase:")
+#Number 2
+lastname=input("Enter last name in Uppercase:")
+
+firstname=firstname.upper()
+
+lastname=lastname.lower()
+
+#Number 3
+print("Hello",firstname,lastname)
+
+#Number 4
+print("")
+
+print("")
+
+#Number 5
+fullname=firstname+" "+lastname
+
+#Number 6
+print(fullname[6:])
+
+#Number 7
+replace=fullname.replace("peete","Walsh College Student")
+print(replace)
+
+#Number 8
+print('"Start by doing whats necessary; then do whats possible; and suddenly you are doing the impossible - Francis of Assisi"')
+
+#Number 9
+x=1.23
+y=4.5
+
+#Number 10
+add = x+y
+sub = x-y
+multi = x*y
+divi = x/y
+
+#Number 11
+f'{x} plus {y} equals {add}'
+print(x,"minus",y,"equals",sub)
+print("%s times %s equals %s" %(x,y,multi))
+print(str(x)+" divided by "+str(y)+" equals "+str(divi))
+
+#Number 12
+import math
+sq_root=math.sqrt(multi)
+print("the square root of",multi,"equals",sq_root) 
+
+#Number 13
+month="October"
+day=28
+
+#Number 14
+print("Today is day %s of the month %s. "%(day,month))
+
+
