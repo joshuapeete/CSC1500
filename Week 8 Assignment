@@ -1,7 +1,7 @@
 #Number 1
-firstname=input("Enter first name in lowercase:")
+firstname="joshua"
 #Number 2
-lastname=input("Enter last name in Uppercase:")
+lastname="PEETE"
 
 firstname=firstname.upper()
 
@@ -17,6 +17,7 @@ print("")
 
 #Number 5
 fullname=firstname+" "+lastname
+print(fullname)
 
 #Number 6
 print(fullname[6:])
