@@ -1,0 +1,135 @@
+#Question One:
+listA = [10,20,30,40,50]
+listB = []
+current = 0
+next = 0
+prev = 0
+while (current < len(listA)):
+   if (current == 0):
+      next = current + 1
+      listB.append((listA[current] + listA[next]))
+   elif (current == (len(listA) - 1)):
+      next = current - 1
+      listB.append((listA[current] + listA[next]))
+   else:
+      next = current + 1
+      prev = current - 1
+      listB.append((listA[current] + listA[next] + listA[prev]))
+   current += 1
+print (listB)
+
+
+#Question Two:
+numOfDays = int(input("Enter the number of days: "))
+pennies = 1
+totalPennies = 0
+
+print("Day    Salary(dollars)")
+
+for i in range(numOfDays):
+    print((i+1),"\t",pennies * .01)
+    totalPennies = totalPennies + pennies
+    pennies = pennies * 2
+
+totalSalary = totalPennies * 0.01
+
+print("\nTotal salary is: $",round(totalSalary, 2))
+
+
+#Question Three:
+def _encrypt(s):
+   ans =""
+   for k in s:
+       a1 = ord(k)
+       a2 = ord('a')
+       a3 = ord("a")
+       if(a1-a2>=0 and a1-a2<=25):
+           b1 = (a1-a2+4)%26+a2
+           ans = ans+chr(b1)
+       elif(a1-a3>=0 and a1-a3<=25):
+           b1 = (a1-a3+4)%26+a3
+           ans = ans+chr(b1)
+   return ans
+def _decrypt(s):
+   ans =""
+   for k in s:
+       a1 = ord(k)
+       a2 = ord('a')
+       a3 = ord("a")
+       if(a1-a2>=0 and a1-a2<=25):
+           b1 = (a1-a2+22)%26+a2
+           ans = ans+chr(b1)
+       elif(a1-a3>=0 and a1-a3<=25):
+           b1 = (a1-a3+22)%26+a3
+           ans = ans+chr(b1)
+   return ans
+s = _encrypt("how do you do")
+print(s)
+print(_decrypt(s))
+
+
+#Question Four
+X = int(input("Enter value for X: "))
+s = 0
+for i in range(1,X+1):
+    s += i
+    print(s)
+    
+
+#Question Five
+y=0
+z=0
+x=int(input("Enter a value for x: "))
+if x > 100:
+    y=20
+    z=40
+    print("Y=",y,"Z=",z)
+    
+a=int(input("Enter a value for a: "))
+b=1
+c=0
+if a < 10:
+    b = 0
+    c = 1
+    print("B=",b,"C=",c)
+   
+b = 1 
+a = int(input("Enter the value of a: "))
+if a < 10: 
+   b = 0
+else:
+   b = 99 
+print ("B =", b) 
+
+
+#Question Six
+def count(sentence):
+    vowels=['a','e','i','o','u']
+    vcount=0
+    ccount=0
+    sentence=sentence.lower()
+    for i in sentence:
+        if(i in vowels):
+            vcount+=1
+        elif(i not in vowels and i.isalpha()):
+            ccount+=1
+    print("Number of vowels:",vcount)
+    print("Number of consonants:",ccount)
+count("There are 11 vowels in this sentence!!!!")
+
+#Question Seven
+def fibonacci(n):
+    if n <= 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+def print_sequence(n):
+    print("First " + str(n) + " numbers of fibonacci sequence are")
+    for i in range(n):
+        print(fibonacci(i))
+
+
+n = int(input("Enter a value for n: "))
+print_sequence(n)
