@@ -1,0 +1,81 @@
+def ID():
+    while True:
+        id_ = input("Enter employee ID: ")
+        
+        if id_ == "":
+            print("Employee ID cannot be empty. Enter again.")
+        elif len(id_) <= 7:
+            print("Employee ID should be less than or equal to 7. Enter again.")
+        elif id_.isdigit():
+            break
+        else:
+            print("The employee ID has non numeric characters. Enter again")
+            
+    return id_
+
+def name():
+    while True:
+        name_ = input("Enter employee name: ")
+
+        if name_.strip() == "":
+            print("Employee name can not be empty.")
+        elif name_.lower().replace("-", "").replace("'", "").replace(" ", "").isalpha():
+            break
+        else:
+            print("Enter correct employee name.")
+            
+    return name_
+
+def email():
+    while True:
+        email_ = input("Enter employee email: ")
+        
+        if len(set("!\"'#$%^&*()= +,<>/?;:[]{}\\").intersection(set(email_))) > 0:
+            print("Do not use any of these characters: ! \" ' # $ % ^ & * ( ) = + , < > / ? ; : [ ] { } \\. Try again.")
+        elif email_.strip().replace("@", "").replace(".", "").replace("_", "").isalnum():
+            break
+        else:
+            print("Try again.")
+            
+    return email_
+
+def salary():
+    while True:
+        salary_ = input("Enter salary: ")
+
+        try:
+            salary_ = float(salary_)
+            if salary_ < 18 and salary_ > 27:
+                print("Salary should be between 18 and 27")
+            else:
+                break
+        except:
+            print("The digit is not a floating point.")
+            
+    return salary_
+
+employees = list()
+while True:
+    id_ = ID()
+    name_ = name()
+    email_ = email()
+    salary_ = salary()
+    
+    employee = {
+        "id": id_,
+        "name": name_,
+        "email": email_,
+        "salary": salary_
+    }
+    
+    employees.append(employee)
+    
+    quit = input("Do you want to quit? Y/N ").lower()
+    if quit == "y":
+        break
+
+for employee in employees:
+    employee["name"] = "IT Department" + employee["name"]
+    employee["salary"] = employee["salary"] * 1.3
+    
+print(employees)
